@@ -26,6 +26,7 @@ def getOutLook_calander():
    print("Default profile name: {}".format(Outlook.DefaultProfileName))
     #getting the namespace object
    namespace =Outlook.Session
+   #this will be edited when I have access to the resnet email.
    recipient =namespace.createRecipient("resnet@uww.edu")
    sharedCalender = namespace.GetSharedDefaultFolder(recipient,9)
    return sharedCalender
