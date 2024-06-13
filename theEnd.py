@@ -26,8 +26,8 @@ def getOutLook_calander():
    print("Default profile name: {}".format(Outlook.DefaultProfileName))
     #getting the namespace object
    namespace =Outlook.Session
-   #this will be edited when I have access to the resnet email.
-   recipient =namespace.createRecipient("resnet@uww.edu")
+   #I have access to any shared email entered .
+   recipient =namespace.createRecipient("Changeme")
    sharedCalender = namespace.GetSharedDefaultFolder(recipient,9)
    return sharedCalender
 
@@ -78,7 +78,7 @@ for days in dates:
         begin=dt.datetime(year,month,day)
     elif days == dates[-1]:
        end =dt.datetime(year,month,day)
-
+#this will take all the data within a week and past them in a formated csv file.
 sharedCalender=getOutLook_calander()
 TheStolenData = get_collectedData(start,end,sharedCalender)
 print(TheStolenData)
